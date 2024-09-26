@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  background-color: #010026;
+  @apply text-white;
+}
+.animated-text h3:nth-child(1) {
+  animation: text-move 10s infinite;
+}
+@keyframes text-move {
+  0%{
+    margin-top:0;
+  }
+  25%{
+    margin-top:-95px;
+  }
+  50%{
+    margin-top:-190px;
+  }
+  75%{
+    margin-top:-95px;
+  }
+  100%{
+    margin-top:0;
+  }
+}
