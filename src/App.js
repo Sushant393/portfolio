@@ -9,7 +9,7 @@ import Contact from "./scenes/Contact";
 import Footer from "./scenes/Footer";
 import useMediaQuery from "./hooks/useMediaQuery";
 import { useEffect, useState } from "react";
-import Testimonials from "./scenes/Testimonials";
+// import Testimonials from "./scenes/Testimonials";
 import { motion } from "framer-motion";
 
 
