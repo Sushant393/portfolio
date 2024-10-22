@@ -54,9 +54,9 @@ const Landing = ({ setSelectedPage }) => {
           <a
             className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
               hover:bg-blue hover:text-white transition duration-500"
-            href="/assets/Sushant-Web-Dev-Resume.pdf"
+            href="/assets/sushant-resume.pdf"
             target="_blank"  
-            download="Sushant-webdev-Resume.pdf"          
+            download="Sushant-FrontEnd-Resume.pdf"          
           >
             Resume
           </a>
