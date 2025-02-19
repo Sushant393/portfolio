@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Landing = ({ setSelectedPage }) => {
-    
   return (
     <section
       id="home"
@@ -56,7 +55,8 @@ const Landing = ({ setSelectedPage }) => {
               hover:bg-blue hover:text-white transition duration-500"
             href="/assets/sushant-resume.pdf"
             target="_blank"  
-            download="Sushant-FrontEnd-Resume.pdf"          
+            download="Sushant-FrontEnd-Resume.pdf"    
+            onClick={e=>{console.log("Button Clicked")}}      
           >
             Resume
           </a>

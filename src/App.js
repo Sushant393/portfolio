@@ -10,9 +10,8 @@ import Footer from "./scenes/Footer";
 import useMediaQuery from "./hooks/useMediaQuery";
 import { useEffect, useState } from "react";
 // import Testimonials from "./scenes/Testimonials";
+import Experience from "./scenes/Experience";
 import { motion } from "framer-motion";
-
-
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
@@ -78,6 +77,16 @@ function App() {
           onViewportEnter={() => setSelectedPage("skills")}
         >
           <MySkills />
+        </motion.div>
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full ">
+        <motion.div
+          margin="0 0 -200px 0"
+          amount="all"
+          onViewportEnter={() => setSelectedPage("experience")}
+        >
+          <Experience />
         </motion.div>
       </div>
       <LineGradient />
