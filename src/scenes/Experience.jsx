@@ -23,11 +23,13 @@ const workDetails = {
         ]
         },
         "Bharat Tech":{
-            role:"Front end Developer Intern",
+            role:"Front End Developer Intern",
             location:"Mumbai[Remote],India",
             duration:"Oct 2023 - Present",
-            details:["Implemented the wireframes provided by the design team",
-                "build multiple pages of the company website along with product listing"
+            details:["Collaborated with senior developers to design and implement responsive user interfaces using HTML, CSS, and JavaScript, improving the user experience of core web applications.",
+                "Assisted in converting static design mockups into interactive web pages using ReactJS and integrated them with backend APIs, ensuring seamless data flow.",
+                "Contributed to creating reusable UI components with TailwindCSS and React, which reduced development time for future features by 25%.",
+                "Gained hands-on experience with front-end frameworks and tools like React, TailwindCSS, and Webpack, leading to a strong understanding of modern web development practices."                
             ]
             }
 }
@@ -92,9 +94,11 @@ const MyExperience = () => {
           }}
         >
             <div>
-                <h1>{workDetails[companySelected].role} @ {companySelected}</h1>
-                <span>{workDetails[companySelected].location}</span>
-                <span>{workDetails[companySelected].duration}</span>
+                <h1 className=" text-2xl font-semibold">{workDetails[companySelected].role} <span className=" text-blue hover:underline hover:cursor-pointer">@ {companySelected}</span> </h1>
+                <div className="text-sm font-semibold block py-2">
+                <span>{workDetails[companySelected].location} | {workDetails[companySelected].duration}</span>
+                </div>
+                
             </div>
             </motion.div>
 
@@ -105,11 +109,12 @@ const MyExperience = () => {
           transition={{ duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
+            visible: { opacity: 1, x: 0 },            
           }}
+          className="mx-5 my-5 text-lg"
         >
                 {workDetails[companySelected].details.map((detail,key)=>{
-                   return  <li key={key}>{detail}</li>
+                   return  <li className="list-disc" key={key}>{detail}</li>
                 })}
             </motion.div>
         </div>
