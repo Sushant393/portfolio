@@ -3,7 +3,7 @@ import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
 import { useState } from "react";
 // import AnchorLink from "react-anchor-link-smooth-scroll";
-const companies = ["Deloitte","Myntra","Bharat Tech"];
+const companies = ["Bharat Tech"];
 const workDetails = {
     "Deloitte":{
     role:"Backend Developer",
@@ -23,8 +23,8 @@ const workDetails = {
         ]
         },
         "Bharat Tech":{
-            role:"Front End Developer Intern",
-            location:"Mumbai[Remote],India",
+            role:"Front End Developer",
+            location:"India",
             duration:"Oct 2023 - Present",
             details:["Collaborated with senior developers to design and implement responsive user interfaces using HTML, CSS, and JavaScript, improving the user experience of core web applications.",
                 "Assisted in converting static design mockups into interactive web pages using ReactJS and integrated them with backend APIs, ensuring seamless data flow.",
@@ -63,12 +63,12 @@ const MyExperience = () => {
 
       {/* WORK */}
       
-     <div className="md:flex items-center justify-evenly border py-5 md:py-14">
+     <div className="md:flex items-center justify-evenly py-5 md:py-14">
      <motion.div        
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          className="flex gap-4 md:flex-col md:border-l-2 border-blue"
+          className="flex gap-12   md:flex-col md:border-l  border-blue"
           transition={{ duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -50 },
@@ -77,12 +77,12 @@ const MyExperience = () => {
         >
         {companies.map((company)=>{
             return <div key={company}
-            className={`md:p-5 ${companySelected===company?"md:bg-gradient-rainblue md:border-none border-b-2 border-blue":""}`}
+            className={` md:px-5 py-3 hover:cursor-pointer hover:text-white font-semibold ${companySelected===company?"md:bg-gradient-rainblue md:border-none border-b-2 border-blue text-deep-blue":""}`}
                 onClick={e=>{setCompanySelected(company)}}
             >{company}</div>
         })}
         </motion.div>
-        <div className="details md:w-1/2">
+        <div className="details md:w-2/3">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -95,7 +95,7 @@ const MyExperience = () => {
         >
             <div>
                 <h1 className=" text-2xl font-semibold">{workDetails[companySelected].role} <span className=" text-blue hover:underline hover:cursor-pointer">@ {companySelected}</span> </h1>
-                <div className="text-sm font-semibold block py-2">
+                <div className=" font-semibold block py-2">
                 <span>{workDetails[companySelected].location} | {workDetails[companySelected].duration}</span>
                 </div>
                 
@@ -111,10 +111,10 @@ const MyExperience = () => {
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },            
           }}
-          className="mx-5 my-5 text-lg"
+          className="m-5"
         >
                 {workDetails[companySelected].details.map((detail,key)=>{
-                   return  <li className="list-disc" key={key}>{detail}</li>
+                   return  <li className="list-disc my-4   " key={key}>{detail}</li>
                 })}
             </motion.div>
         </div>
